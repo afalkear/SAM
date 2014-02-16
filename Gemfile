@@ -29,10 +29,12 @@ gem 'jbuilder', '~> 1.2'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.0.beta'
+  gem 'figaro'
 end
 
 group :test do
   gem 'travis-lint'
+  gem 'coveralls', require: false
 end
 
 group :doc do
