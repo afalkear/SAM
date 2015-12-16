@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require forecast_io
 //= require twitter/bootstrap
 //= require turbolinks
 //= require_tree .
