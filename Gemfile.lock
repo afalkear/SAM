@@ -54,6 +54,11 @@ GEM
     figaro (0.7.0)
       bundler (~> 1.0)
       rails (>= 3, < 5)
+    forecast_io (2.0.0)
+      faraday
+      hashie
+      multi_json
+    hashie (3.4.3)
     hashr (0.0.22)
     hike (1.2.3)
     http (0.5.0)
@@ -190,6 +195,7 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   coveralls
   figaro
+  forecast_io
   jbuilder (~> 1.2)
   jquery-rails
   less-rails-bootstrap

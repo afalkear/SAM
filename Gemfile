@@ -25,6 +25,9 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem 'twitter'
 
+# forecast
+gem 'forecast_io'
+
 # use twitter bootstrap
 gem 'less-rails-bootstrap'
 
