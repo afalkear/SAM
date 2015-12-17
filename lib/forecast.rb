@@ -25,7 +25,7 @@ module Forecast
     Forecast.update_forecast
     return false if @forecast.empty? #if API call failed
 
-    return ((@forecast.daily.data[Forecast.get_day].precipProbability == 0) ? false : true)
+    return ((@forecast.daily.data[Forecast.get_day(day)].precipProbability == 0) ? false : true)
   end
 
   def self.it_is_going_to_rain_at
@@ -34,8 +34,8 @@ module Forecast
     
     #first 12 hours
     (0..11).each do |hour|
-      if @forecast.daily.data[hour].precipProbability > 0
-        rain_at << {"#{Time.at(@forecast.daily.data[hour].time).to_datetime.hour}" => "#{@forecast.daily.data[hour].precipProbability}"}
+      if @forecast.daily.data[hour] && @forecast.daily.data[hour].precipProbability > 0
+        rain_at["#{Time.at(@forecast.daily.data[hour].time).to_datetime.hour}"] = "#{@forecast.daily.data[hour].precipProbability}"
       end
     end
 
