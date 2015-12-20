@@ -5,6 +5,11 @@ SAM::Application.routes.draw do
   # You can have the root of your site routed with "root"
   root to: 'static_pages#home'
 
+  namespace :api do
+    namespace :v0 do
+      get 'check_for_rain' => 'forecast#check_for_rain'
+    end
+  end
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
