@@ -35,8 +35,8 @@ class Forecast
 
     #first 12 hours
     (0..11).each do |hour|
-      if @@forecast.daily.data[hour] && @@forecast.daily.data[hour].precipProbability > 0
-        rain_at["#{Time.at(@@forecast.daily.data[hour].time).to_datetime.hour}"] = "#{@@forecast.daily.data[hour].precipProbability}"
+      if @@forecast.hourly.data[hour] && @@forecast.hourly.data[hour].precipProbability > 0
+        rain_at["#{Time.at(@@forecast.hourly.data[hour].time).to_datetime.hour}"] = "#{@@forecast.hourly.data[hour].precipProbability}"
       end
     end
 
