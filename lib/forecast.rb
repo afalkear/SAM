@@ -10,9 +10,13 @@ class Forecast
     if is_it_going_to_rain?("today")
       message = "#{users} :It appears that it is going to rain today: "
       it_is_going_to_rain_at.each do |hour, precipitation|
-        message << "#{hour}hs: #{precipitation}% - "
+        message << "#{hour}hs[#{precipitation}%] "
       end
-      SamTwitter.post(message)
+      while message.length >= 140 do #twitter max number
+        SamTwitter.post(message.slice! 0..139)
+        message = message.prepend("#{users}: ")
+      end
+      SamTwitter.post(message) unless message.blank?
     end
   end
 
